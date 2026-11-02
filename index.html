@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100  m-0"> <!--Sets background color and removes margins-->
+    <header class="flex justify-between items-center py-4"> <!--Sets header layout-->
+        <a href="#" class="text-xl font-bold text-blue-700 md:text-2xl lg:text-3xl xl:text-4xl">Tailwind</a><!--Sets style for heading-->
+        <nav class="hidden md:flex space-x-4"><!--Desktop nav. Hidden on screens under medium size-->
+            <a href="#" class="hover:text-blue-700 md: text-xl lg:text-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">Learn</a>
+            <a href="#" class="hover:text-blue-700 text-xl lg:text-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">Practice</a>
+            <a href="#" class="hover:text-blue-700 text-xl lg:text-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">FAQ</a>
+         </nav>
+        <!--AI ACKNOWLEDGEMET: I had AI assistance with the mobile nav portion (The hamburger and the JAVA Script)-->
+
+         <div class="md:hidden flex items-center"><!--Mobile hamburger-->
+        <button id="mobile-menu-button" type="button" class="text-gray-400 hover:text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!-- Icon for Hamburger (SVG) -->
+          <svg class="h-6 w-6" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="#" class="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">Learn</a>
+      <a href="#" class="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">Practice</a>
+      <a href="#" class="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">FAQ</a>
+    </div>
+  </div>
+  <script>
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+     btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+    </script>
+    </header>
+
+    <section class="px-6 py-16 text-center md:py-24"><!--The hero section. Text size changes based on screen size-->
+        <h1 class="text-3xl font-bold text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl">
+            Build it once. Reuse it everywhere.
+        </h1>
+        <p class="mx-auto mt-4 max-w-xl text-slate-600 sm:text-xl md:text-2xl lg:text-3xl">
+            A reusable component set built with Tailwind CSS.
+        </p>
+        <div class="mt-8 flex justify-center gap-4">
+            <!--The text size and padding on both buttons change with screen size-->
+            <a href="#start"
+            class="rounded-full bg-blue-800 px-6 py-3 text-white
+              hover:bg-blue-900 focus-visible:outline
+              focus-visible:outline-2 focus-visible:outline-offset-2 md:text-xl px-7 py-4">
+                Get started
+             </a>
+             <a href="#practice"
+            class="rounded-full bg-green-800 px-6 py-3 text-white
+              hover:bg-green-900 focus-visible:outline
+              focus-visible:outline-2 focus-visible:outline-offset-2 md:text-xl px-7 py-4">
+                Practice
+             </a>  
+  </div>
+</section>
+
+<section id="features" class="px-6 py-12"> <!--More columns are shown on larger screens. Text size also changes with screen size-->
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <article class="rounded-2xl border border-slate-200 p-6 bg-blue-500">
+      <h3 class="text-lg font-semibold text-slate-900 md:text-xl lg:text-2xl">Learn</h3>
+      <p class="mt-2 text-black-600 md:text-lg lg:text-xl">Learn about tailwind and how to use it</p>
+    </article>
+
+    <article class="rounded-2xl border border-slate-200 p-6 bg-blue-500">
+      <h3 class="text-lg font-semibold text-slate-900 md:text-xl lg:text-2xl">Practice</h3>
+      <p class="mt-2 text-black-600 md:text-lg lg:text-xl">Use our tailwind exercises to test your knowledge</p>
+    </article>
+
+    <article class="rounded-2xl border border-slate-200 p-6 bg-blue-500">
+      <h3 class="text-lg font-semibold text-slate-900 md:text-xl lg:text-2xl">FAQ</h3>
+      <p class="mt-2 text-black-600 md:text-lg lg:text-xl">Check out our FAQ page if you have any troubles</p>
+    </article>
+  </div>
+</section>
+<footer class="bg-gray-400 text-sm lg:text-base"> <!--Text slightly increases on large screens-->
+    &copy;Adam A 2026
+</footer>
+</body>
+</html>
